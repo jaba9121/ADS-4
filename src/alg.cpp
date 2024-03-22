@@ -7,12 +7,10 @@ int binSearch(int* arr, int len, int value) {
         int mid = left + (right - left) / 2;
         if (arr[mid] > value) {
             right = mid - 1;
-        }else
-        {
+        } else {
             if (arr[mid] < value) {
                 left = mid + 1;
-            }else
-            {
+            } else {
                 count++;
                 int left = mid - 1;
                 int right = mid + 1;
@@ -25,9 +23,10 @@ int binSearch(int* arr, int len, int value) {
                     right++;
                 }
                 return count;
+            }
         }
-    }
     return count;
+    }
 }
 int countPairs1(int* arr, int len, int value) {
     int count = 0;
