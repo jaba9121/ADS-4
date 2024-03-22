@@ -27,6 +27,7 @@ int binSearch(int* arr, int len, int value) {
         }
     return count;
     }
+    return 0;
 }
 int countPairs1(int* arr, int len, int value) {
     int count = 0;
