@@ -7,23 +7,24 @@ int binSearch(int* arr, int len, int value) {
         int mid = left + (right - left) / 2;
         if (arr[mid] > value) {
             right = mid - 1;
-        }
-        else if (arr[mid] < value) {
-            left = mid + 1;
-        }
-        else {
-            count++;
-            int left = mid - 1;
-            int right = mid + 1;
-            while ((left >= 0) && (arr[left] == value)) {
+        }else
+        {
+            if (arr[mid] < value) {
+                left = mid + 1;
+            }else
+            {
                 count++;
-                left--;
-            }
-            while ((right < len) && (arr[right] == value)) {
-                count++;
-                right++;
-            }
-            return count;
+                int left = mid - 1;
+                int right = mid + 1;
+                while ((left >= 0) && (arr[left] == value)) {
+                    count++;
+                    left--;
+                }
+                while ((right < len) && (arr[right] == value)) {
+                    count++;
+                    right++;
+                }
+                return count;
         }
     }
     return count;
@@ -34,7 +35,6 @@ int countPairs1(int* arr, int len, int value) {
         for (int j = (i + 1); j < len; j++) {
             if ((arr[i] + arr[j]) == value) {
                 count++;
-                std::cout << arr[i] << '+' << arr[j];
             }
         }
     }
